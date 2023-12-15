@@ -1,3 +1,5 @@
+import React, { useRef, useState } from 'react';
+
 export default function Player() {
 
 const playerName = useRef()
@@ -11,7 +13,7 @@ function handleClick() {
       <h2>Welcome {enteredPlayerName ?? 'unknown entity'} </h2>
       <p>
         <input type="text" ref={playerName}/>
-        <button>Set Name</button>
+        <button onClick={handleClick}>Set Name</button>
       </p>
     </section>
   );
