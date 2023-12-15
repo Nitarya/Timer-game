@@ -13,6 +13,7 @@ function handleStart() {
         setTimerStarted(false); // Stop the timer and update state
     }, targetTime * 1000)
     setTimerStarted(true)
+    setTimerExpired(false)
 }
 
 function handleStop() {
@@ -23,7 +24,7 @@ function handleStop() {
     return (
        <section className="challenge">
         <h2>{title}</h2>
-        {timerExpired && <p> You Lost! </p>}
+        {timerExpired ? 'You Lost' : ''}
         <p className="challenge-time">
             {targetTime} second {targetTime > 1 ? 's' : ''}
         </p>
